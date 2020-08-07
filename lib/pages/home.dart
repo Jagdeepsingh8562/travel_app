@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/widgets/tripgrid.dart';
 import 'package:travel_app/widgets/triplist.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -11,6 +12,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  bool isoll = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,13 +34,20 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: Colors.white,
                   fontStyle: FontStyle.italic,
                   fontWeight: FontWeight.w500),
-            ),SizedBox(
-              height: 75
             ),
-            Flexible(child: TripList()),
+            SizedBox(height: 75),
+            Flexible(child: isoll == true ? TripList() : TripGrid()),
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(child: Icon(isoll==true? Icons.swap_vert:Icons.swap_horiz),onPressed: () {
+        setState(() {
+          if (isoll == false) {
+            isoll = true;
+          } else
+            isoll = false;
+        });
+      }),
     );
   }
 }

@@ -57,7 +57,7 @@ class _TripListState extends State<TripList> {
 
   Widget _buildTile(Trip trip) {
     return Card(
-      color: Colors.white70,
+      color: Color.fromARGB(230, 255, 255, 255),
       child: ListTile(
         onTap: (){Navigator.push(context,MaterialPageRoute(builder: (context)=>Details(trip: trip)));},
         title: Column(
@@ -73,7 +73,6 @@ class _TripListState extends State<TripList> {
           ],
         ),
         leading: ClipRRect(
-
           borderRadius: BorderRadius.circular(10),
           child: Hero(tag: trip.img,child: Image.asset(trip.img,height: 50,width: 70,)),
         ),

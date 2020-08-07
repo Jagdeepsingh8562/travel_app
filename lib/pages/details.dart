@@ -18,6 +18,7 @@ class Details extends StatelessWidget {
               child: Column(
           children: [
             Container(
+
               height: MediaQuery.of(context).size.height / 2.2,
               width: MediaQuery.of(context).size.width,
               child: Hero(
@@ -48,7 +49,10 @@ class Details extends StatelessWidget {
                 ),
                 trailing: HeartWidget()
               ),
-                    Text(trip.para,style: TextStyle(color: Colors.grey[850],fontSize: 16),)
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(trip.para,style: TextStyle(color: Colors.grey[700],fontSize: 16),),
+                    )
                   ],
                 ),
               ),
