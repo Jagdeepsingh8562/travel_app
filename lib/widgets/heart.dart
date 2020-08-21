@@ -10,19 +10,21 @@ class _HeartWidgetState extends State<HeartWidget>
   AnimationController _controller;
   Animation _colorAnimation;
   Animation<double> _sizeAnimation;
+  Animation _curve;
   bool isFav;
   @override
   void initState() {
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 300),
+      duration: Duration(milliseconds: 320),
     );
+    _curve =CurvedAnimation(parent: _controller, curve: Curves.easeInOut);
     _sizeAnimation = TweenSequence<double>([
       TweenSequenceItem(tween: Tween(begin: 30, end: 45), weight: 50),
       TweenSequenceItem(tween: Tween(begin: 45, end: 30), weight: 50)
-    ]).animate(_controller);
+    ]).animate(_curve);
     _colorAnimation = ColorTween(begin: Colors.grey[400], end: Colors.redAccent)
-        .animate(_controller);
+        .animate(_curve);
     super.initState();
 
     _controller.addListener(() {
@@ -30,7 +32,7 @@ class _HeartWidgetState extends State<HeartWidget>
       // print(_colorAnimation.value);
     });
     _controller.addStatusListener((status) {
-      print(status);
+     // print(status);
       status == AnimationStatus.completed ? isFav = true : isFav = false;
     });
   }
@@ -47,7 +49,7 @@ class _HeartWidgetState extends State<HeartWidget>
       animation: _controller,
       builder: (context, child) {
         return IconButton(
-            splashColor: _colorAnimation.value,
+            splashRadius: 0.25,
             icon: Icon(
               Icons.favorite,
               color: _colorAnimation.value,

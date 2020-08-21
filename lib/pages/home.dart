@@ -14,20 +14,20 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.fromLTRB(18, 15, 20, 10),
+        //padding: EdgeInsets.fromLTRB(18, 15, 20, 10),
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/bg.png"), 
-            fit: BoxFit.fitWidth,
-            alignment: Alignment.topLeft
+            image: AssetImage("assets/bg202.jpg"), 
+            fit: BoxFit.fill,
+             alignment: Alignment.topCenter
           ),
         ),
         child: Column(
           children: <Widget>[
             SizedBox(
-              height: 20,
+              height: 40,
             ),
-            SizedBox(height: 150,child: ScreenTitle(text: 'Travel App')),
+            SizedBox(height: 232,child: ScreenTitle(text: 'Travel App')),
             Flexible(child: isoll == true ? TripList() : TripGrid())
           ],
         ),

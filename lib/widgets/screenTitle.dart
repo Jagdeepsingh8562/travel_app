@@ -12,22 +12,23 @@ class ScreenTitle extends StatelessWidget {
         text,
         style: TextStyle(
             fontSize: 36,
-            color: Colors.white,
+            color: Colors.blueAccent[700],
             fontWeight: FontWeight.bold,
             fontStyle: FontStyle.italic,
             ),
       ),     
       tween: Tween<double>(begin: 0, end: 1),
       duration: Duration(milliseconds: 500),
+      curve: Curves.easeIn,
       builder: (BuildContext context, double _val, Widget child){
        
         return Opacity(
             opacity: _val,
             child:Padding(
-              padding: EdgeInsets.only(top: _val * 25),
+              padding: EdgeInsets.only(top: _val * 50),
               child: child,
             ));
-      }, onEnd: () => print('hellio'),
+      },
     );
   }
 }
