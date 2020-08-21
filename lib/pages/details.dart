@@ -22,7 +22,7 @@ class Details extends StatelessWidget {
               height: MediaQuery.of(context).size.height / 2.2,
               width: MediaQuery.of(context).size.width,
               child: Hero(
-                tag: trip.img,
+                tag: '${trip.img}',
                   child: Image.asset(
                   trip.img,
                   fit: BoxFit.cover,

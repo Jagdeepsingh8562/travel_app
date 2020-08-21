@@ -84,7 +84,7 @@ class _TripGridState extends State<TripGrid> {
               ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: Hero(
-                    tag: trip.img,
+                    tag: '${trip.img}',
                     child: Image.asset(
                       trip.img,
                       height: 100,
@@ -97,7 +97,7 @@ class _TripGridState extends State<TripGrid> {
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.blue[300])),
-              SizedBox(height: 30,),Text('₹${trip.price}'),
+              SizedBox(height: 10,),Text('₹${trip.price}'),
             ],
           ),
         ),

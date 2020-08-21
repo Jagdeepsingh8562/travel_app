@@ -12,9 +12,9 @@ class MyApp extends StatelessWidget {
       title: 'Travel App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+       // visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Travel App'),
+      home: MyHomePage(),
       debugShowCheckedModeBanner: false,
     );
   }
